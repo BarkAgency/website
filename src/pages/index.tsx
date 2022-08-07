@@ -2,6 +2,9 @@ import * as React from "react"
 import logo from "../images/bark.svg";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
+import { Link } from 'gatsby';
+
+import talent from '../data/talent';
 
 // styles
 const pageStyles = {
@@ -125,40 +128,6 @@ const badgeStyle = {
   lineHeight: 1,
 }
 
-// data
-const links = [
-  {
-    text: "Wonderbai",
-    url: "/wonderbai/",
-    image: "/talent/wonderbai.jpg",
-    name: "JENS SÆTTER-LASSEN",
-    stream: "https://twitch.tv/wonderbai"
-  },
-  {
-    text: "agge",
-    url: "/agge/",
-    image: "/talent/placeholder.jpg",
-  },
-  {
-    text: "BRIANFROMDENMARK",
-    url: "/BRIANFROMDENMARK/",
-
-    image: "/talent/placeholder.jpg",
-
-  },
-  {
-    text: "Zrool",
-    url: "/Zrool/",
-
-    image: "/talent/placeholder.jpg",
-  },
-  {
-    text: "JK",
-    url: "/JK/",
-    image: "/talent/placeholder.jpg",
-  },
-]
-
 // markup
 const IndexPage = () => {
   return (
@@ -190,10 +159,10 @@ const IndexPage = () => {
             ))}
           </ul>
 
-          <h1 style={headingStyles}>
+          <h2 style={headingStyles}>
             Bark Agency giver dig en plads ved spisebordet hos præcist den målgruppe du gerne vil ramme.
             Ved at have influencere der fastholder deres publikum i gennemsnit 45 minutter ad gangen, med muligheden for konstant eksponering og dialog om netop dit budskab eller dit produkt, sikrer vi jer muligheden for succes. 
-          </h1>
+          </h2>
         </section>
     
         <section style={{
@@ -201,17 +170,20 @@ const IndexPage = () => {
           margin: 'auto'
         }}>
           <ul style={listStyles}>
-            {links.map(link => (
-              <li key={link.url} style={{ ...listItemStyles }}>
+            {talent.map(talent => (
+              <li key={talent.url} style={{ ...listItemStyles }}>
                 <span>
-                  <a
+                  <Link
                     style={linkStyle}
-                    href={`#${link.url}`}
+                    state={{
+                      modal: true
+                    }}
+                    to={`${talent.url}`}
                   >
-                    <img style={linkImgStyle}  src={link.image}  alt={link.text}/>
-                    {link.text}
-                  </a>
-                  {link.badge && (
+                    <img style={linkImgStyle}  src={talent.image}  alt={talent.text}/>
+                    {talent.text}
+                  </Link>
+                  {talent.badge && (
                     <span style={badgeStyle} aria-label="New Badge">
                       NY!
                     </span>
