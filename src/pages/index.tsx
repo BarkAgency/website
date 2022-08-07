@@ -15,6 +15,7 @@ const pageStyles = {
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
+  lineHeight: 1
 }
 const headingAccentStyles = {
   color: "#663399",
@@ -50,9 +51,15 @@ const listItemStyles = {
   display: `inline-block`,
   padding: '.5rem',
 }
+const listItemLinkStyles = {
+  color: 'rgba(255, 255, 255, 0.85)' ,
+  textDecoration: 'none',
+  textTransform: 'uppercase',
+  fontSize: '0.8rem'
+}
 
 const linkStyle = {
-  color: "rgba(255, 255, 255, 0.85)",
+  color: "rgba(0, 0, 0, 0.85)",
   fontWeight: "bold",
   fontSize: 16,
   textTransform: 'uppercase',
@@ -61,6 +68,7 @@ const linkStyle = {
 }
 const linkImgStyle = {
   maxWidth: '100%',
+  maxHeight: '400px'
 }
 
 const docLinkStyle = {
@@ -146,6 +154,18 @@ const IndexPage = () => {
         </section>
 
         <section style={{ ...viewZoneStyles, background: '#ffffff' }}>
+          <section style={{
+              margin: 'auto',
+              padding: '1em',
+              textAlign: 'left',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'end',
+              fontSize: '1.5rem',
+              height: '100%'
+            }}>
+
+
           <ul style={doclistStyles}>
             {docLinks.map(doc => (
               <li style={docLinkStyle} key={doc.url}>
@@ -159,29 +179,37 @@ const IndexPage = () => {
             ))}
           </ul>
 
-          <h2 style={headingStyles}>
-            Bark Agency giver dig en plads ved spisebordet hos præcist den målgruppe du gerne vil ramme.
-            Ved at have influencere der fastholder deres publikum i gennemsnit 45 minutter ad gangen, med muligheden for konstant eksponering og dialog om netop dit budskab eller dit produkt, sikrer vi jer muligheden for succes. 
-          </h2>
+            <h2 style={headingStyles}>
+              Bark Agency giver dig en plads ved spisebordet hos præcist den målgruppe du gerne vil ramme.
+              Ved at have influencere der fastholder deres publikum i gennemsnit 45 minutter ad gangen, med muligheden for konstant eksponering og dialog om netop dit budskab eller dit produkt, sikrer vi jer muligheden for succes. 
+            </h2>
+          </section>
+    
         </section>
     
+        <section style={{ ...viewZoneStyles }}>
         <section style={{
           width: '70%',
-          margin: 'auto'
+          height: '100%',
+          margin: 'auto',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}>
           <ul style={listStyles}>
             {talent.map(talent => (
               <li key={talent.url} style={{ ...listItemStyles }}>
                 <span>
                   <Link
-                    style={linkStyle}
+                    style={ listItemLinkStyles }
                     state={{
                       modal: true
                     }}
                     to={`${talent.url}`}
                   >
                     <img style={linkImgStyle}  src={talent.image}  alt={talent.text}/>
-                    {talent.text}
+                    <p>{talent.text}</p>
                   </Link>
                   {talent.badge && (
                     <span style={badgeStyle} aria-label="New Badge">
@@ -193,6 +221,7 @@ const IndexPage = () => {
               </li>
             ))}
           </ul>
+        </section>
         </section>
 
         <section style={{ ...viewZoneStyles, background: '#ffffff' }}>
@@ -221,6 +250,16 @@ const IndexPage = () => {
           </div>
   
           </section>
+        </section>
+
+
+
+        <section style={{
+          textAlign: 'center',  
+          background: '#fff',
+          padding: 20
+        }}>
+          BARK AGENCY © 2022    ALL RIGHTS RESERVED    LEGAL NOTICE
         </section>
 
       </main>
