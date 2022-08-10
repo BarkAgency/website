@@ -159,6 +159,12 @@ const badgeStyle = {
 
 // markup
 const IndexPage = () => {
+
+    window.addEventListener(`scroll`, () => {
+
+      console.log('scroll')
+    });
+
   return (
     <Layout>
       <main style={pageStyles}>
@@ -276,9 +282,27 @@ const IndexPage = () => {
           background: '#fff',
           fontSize: '0.7rem',
           padding: 20,
-          color: 'rgba(0, 0, 0, 0.2)'
+          color: 'rgba(0, 0, 0, 0.2)',
+          display: 'flex',
+          justifyContent: 'space-between',
         }}>
-          BARK AGENCY © 2022    ALL RIGHTS RESERVED    LEGAL NOTICE
+
+          <Link style={ {
+              color: 'rgba(0, 0, 0, 0.2)',
+              textTransform: 'uppercase',
+              textDecoration: 'none'
+            } } to={`/produkt`}>
+            Produkt
+          </Link>
+        
+          <div>BARK AGENCY © 2022    ALL RIGHTS RESERVED    LEGAL NOTICE</div>
+
+          <AnchorLink gatsbyLinkProps={{ style: {
+              color: 'rgba(0, 0, 0, 0.2)',
+              textTransform: 'uppercase',
+              textDecoration: 'none'
+            } }} to={`#talent`} title={"talent"} />
+
         </section>
 
       </main>
