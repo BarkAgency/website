@@ -1,9 +1,12 @@
 import * as React from "react"
 import logo from "../images/bark.svg";
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout"
 import { Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
 
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+ 
 import talent from '../data/talent';
 
 // styles
@@ -36,18 +39,23 @@ const listStyles = {
   display: 'flex',
   flexDirection: 'row',
   //justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+  flexWrap: 'wrap'
 }
-const doclistStyles = {
+const menuStyles = {
   paddingLeft: 0,
+  display: 'flex',
+  justifyContent: 'space-between'
 }
 const listItemStyles = {
   fontWeight: 300,
   fontSize: 24,
   //maxWidth: 560,
+  minWidth: 200,
   maxWidth: '20%',
   marginBottom: 30,
   listStyleType: "none",
+  flex: '50%',
   display: `inline-block`,
   padding: '.5rem',
 }
@@ -68,15 +76,28 @@ const linkStyle = {
 }
 const linkImgStyle = {
   maxWidth: '100%',
-  maxHeight: '400px'
+  minWidth: 170,
+  maxHeight: '400px',
+  transition: 'all .2s ease-in-out',
+  '&:hover': {
+    transform: 'scale(1.1)'
+  }
 }
 
-const docLinkStyle = {
+const menuLinkStyle = {
   ...linkStyle,
   listStyleType: "none",
   display: `inline-block`,
   marginBottom: 24,
   marginRight: 12,
+}
+const menuLinkAStyle = {
+  color: "rgba(0, 0, 0, 0.85)",
+  fontSize: '0.8rem',
+  fontWeight: "normal",
+  textTransform: 'uppercase',
+  verticalAlign: "5%",
+  textDecoration: 'none',
 }
 
 const descriptionStyle = {
@@ -95,7 +116,7 @@ const logoStyles = {
 
 const viewZoneStyles = {
   width: "100vw",
-  height: "100vh",
+  minHeight: "100vh",
   //padding: 40,
   margin: 'auto',
   display: 'block',
@@ -105,17 +126,17 @@ const viewZoneStyles = {
 const docLinks = [
   {
     text: "Talent",
-    url: "/talent",
+    url: "talent",
     color: "#8954A8",
   },
   {
     text: "Cases",
-    url: "/cases",
+    url: "cases",
     color: "#8954A8",
   },
   {
     text: "Kontakt",
-    url: "/kontakt",
+    url: "kontakt",
     color: "#8954A8",
   }
 ]
@@ -141,8 +162,11 @@ const IndexPage = () => {
   return (
     <Layout>
       <main style={pageStyles}>
-        <title>Bark Agency</title>
-        
+
+        <Helmet>
+          <title>Bark Agency</title>
+        </Helmet>
+      
         <section style={{
           ...viewZoneStyles,
           display: 'flex',
@@ -160,24 +184,20 @@ const IndexPage = () => {
               textAlign: 'left',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'end',
+              justifyContent: 'space-between',
               fontSize: '1.5rem',
-              height: '100%'
+              //height: '100%',
+              height: '100vh',
             }}>
 
 
-          <ul style={doclistStyles}>
-            {docLinks.map(doc => (
-              <li style={docLinkStyle} key={doc.url}>
-                <a
-                  style={linkStyle}
-                  href={`${doc.url}?utm_source=starter&utm_medium=ts-docs&utm_campaign=minimal-starter-ts`}
-                >
-                  {doc.text}
-                </a>
-              </li>
-            ))}
-          </ul>
+            <ul style={menuStyles}>
+              {docLinks.map(menuLink => (
+                <li style={menuLinkStyle} key={menuLink.url}>
+                  <AnchorLink gatsbyLinkProps={{ style: menuLinkAStyle }} to={`#${menuLink.url}`} title={menuLink.text} />
+                </li>
+              ))}
+            </ul>
 
             <h2 style={headingStyles}>
               Bark Agency giver dig en plads ved spisebordet hos præcist den målgruppe du gerne vil ramme.
@@ -187,77 +207,76 @@ const IndexPage = () => {
     
         </section>
     
-        <section style={{ ...viewZoneStyles }}>
-        <section style={{
-          width: '70%',
-          height: '100%',
-          margin: 'auto',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-          <ul style={listStyles}>
-            {talent.map(talent => (
-              <li key={talent.url} style={{ ...listItemStyles }}>
-                <span>
-                  <Link
-                    style={ listItemLinkStyles }
-                    state={{
-                      modal: true
-                    }}
-                    to={`${talent.url}`}
-                  >
-                    <img style={linkImgStyle}  src={talent.image}  alt={talent.text}/>
-                    <p>{talent.text}</p>
-                  </Link>
-                  {talent.badge && (
-                    <span style={badgeStyle} aria-label="New Badge">
-                      NY!
-                    </span>
-                  )}
-                  
-                </span>
-              </li>
-            ))}
-          </ul>
-        </section>
-        </section>
-
-        <section style={{ ...viewZoneStyles, background: '#ffffff' }}>
-        <section style={{
-          width: '70%',
-          margin: 'auto',
-          textAlign: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: '1.5rem',
-          height: '100%'
-        }}>
-          <div>
-            <p>Bark Agency<br />
-              <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="mailto:hello@barkagency.dk">hello@barkagency.dk</a><br />
-              <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="tel:+4522909399">+45 22 90 93 99</a>
-            </p>
-            <br />
-            <p>
-              CVR 43380273<br />
-              Vilhelmsro 670<br />
-              3480 Fredensborg, Danmark<br />
-            </p>
-          </div>
-  
+        <section id="talent" style={{ ...viewZoneStyles,  display: 'flex' }}>
+          <section style={{
+            width: '70%',
+            height: '100%',
+            margin: 'auto',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+            <ul style={listStyles}>
+              {talent.map(talent => (
+                <li key={talent.url} style={{ ...listItemStyles }}>
+                  <span>
+                    <Link
+                      style={ listItemLinkStyles }
+                      state={{
+                        modal: true
+                      }}
+                      to={`${talent.url}`}
+                    >
+                      <img style={linkImgStyle}  src={talent.image}  alt={talent.text}/>
+                      <p>{talent.text}</p>
+                    </Link>
+                    {talent.badge && (
+                      <span style={badgeStyle} aria-label="New Badge">
+                        NY!
+                      </span>
+                    )}
+                    
+                  </span>
+                </li>
+              ))}
+            </ul>
           </section>
         </section>
 
-
+        <section id="kontakt" style={{ ...viewZoneStyles, background: '#ffffff' }}>
+          <section style={{
+            width: '70%',
+            margin: 'auto',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '1.5rem',
+            height: '100vh',
+          }}>
+            <div>
+              <p>Bark Agency<br />
+                <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="mailto:hello@barkagency.dk">hello@barkagency.dk</a><br />
+                <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="tel:+4523443936">+45 23 44 39 36 </a>
+              </p>
+              <br />
+              <p>
+                CVR 43380273<br />
+                Vilhelmsro 670<br />
+                3480 Fredensborg, Danmark<br />
+              </p>
+            </div>
+          </section>
+        </section>
 
         <section style={{
           textAlign: 'center',  
           background: '#fff',
-          padding: 20
+          fontSize: '0.7rem',
+          padding: 20,
+          color: 'rgba(0, 0, 0, 0.2)'
         }}>
           BARK AGENCY © 2022    ALL RIGHTS RESERVED    LEGAL NOTICE
         </section>
