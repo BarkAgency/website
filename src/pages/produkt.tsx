@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Layout from "../components/layout"
+import Layout from "../components/layoutModal"
 
 import talent from '../data/talent';
 
@@ -11,8 +11,19 @@ const profilePictureStyles = {
 const TALENT_INDEX = 1;
 
 const ProduktPage = () => {
-        return (
-  <Layout>
+  return (
+      <Layout>
+        <section style={{
+            width: '70%',
+            margin: 'auto',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '1.5rem',
+            height: '100vh',
+          }}>
         <div>
             <small>MEN, HVAD ER DET FOR ET MEDIE?<br />
             </small><br />
@@ -31,6 +42,7 @@ const ProduktPage = () => {
             <small> </small>
             Det kan klart anbefales at sprede sin online-annoncering ud, dog får du ikke samme interaktion med slutbrugeren i nogle andre former for online markedsføring, som du gør hos Bark Agency. Hvor andre medier indbyder til en høj skiprate af betalt indhold, indbyder Twitch til en dialog om de pågældende brands, baseret på live interaktion med seerne.
         </div>
+      </section>
     </Layout>
   )
 }
