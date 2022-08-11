@@ -102,6 +102,16 @@ const ModalExamplePage = () => (
                   INSTAGRAM
                 </Link>
               }
+              {talent[TALENT_INDEX].youtube &&
+                <Link style={ {
+                    color: '#000000',
+                    display: 'block',
+                    textTransform: 'uppercase',
+                    textDecoration: 'none'
+                  } } to={talent[TALENT_INDEX].youtube}>
+                  YOUTUBE
+                </Link>
+              }
                {talent[TALENT_INDEX].presskit &&
                 <Link style={ {
                   color: '#000000',

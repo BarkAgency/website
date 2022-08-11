@@ -55,7 +55,6 @@ const ModalExamplePage = () => (
           
               <Link to={closeTo || '/'} style={{
                 width: '10px',
-                padding: 30,
                 float: 'right'
               }}>
                 <img style={{ width: '10px' }} src={closeX} alt="Close" />
@@ -100,6 +99,16 @@ const ModalExamplePage = () => (
                     textDecoration: 'none'
                   } } to={talent[TALENT_INDEX].instagram}>
                   INSTAGRAM
+                </Link>
+              }
+              {talent[TALENT_INDEX].youtube &&
+                <Link style={ {
+                    color: '#000000',
+                    display: 'block',
+                    textTransform: 'uppercase',
+                    textDecoration: 'none'
+                  } } to={talent[TALENT_INDEX].youtube}>
+                  YOUTUBE
                 </Link>
               }
                {talent[TALENT_INDEX].presskit &&
