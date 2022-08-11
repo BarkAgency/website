@@ -15,7 +15,7 @@ const profilePictureStyles = {
   maxWidth: '100%'
 }
 
-const TALENT_INDEX = 0;
+const TALENT_INDEX = 4;
 
 const ModalExamplePage = () => (
   <Layout>
