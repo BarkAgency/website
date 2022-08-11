@@ -54,11 +54,10 @@ const ModalExamplePage = () => (
               </Link>
           
               <Link to={closeTo || '/'} style={{
-                width: '15px',
-                padding: 30,
+                width: '10px',
                 float: 'right'
               }}>
-                <img style={{ width: '15px' }} src={closeX} alt="Close" />
+                <img style={{ width: '10px' }} src={closeX} alt="Close" />
               </Link>
 
             </section>
