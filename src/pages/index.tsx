@@ -280,7 +280,7 @@ const IndexPage = () => {
           textAlign: 'center',  
           background: '#fff',
           fontSize: '0.7rem',
-          padding: 20,
+          padding: 26,
           color: 'rgba(0, 0, 0, 0.2)',
           display: 'flex',
           justifyContent: 'space-between',
