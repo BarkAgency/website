@@ -1,20 +1,6 @@
 import React from "react"
-import { createGlobalStyle } from "styled-components"
+import GlobalStyle from './globalStyle';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    background: #000000;
-    margin: 0px;
-    font-family: "Helvetica Neue", Helvetica, sans-serif, "Helvetica Neue Regular", Icons;
-  }
-
-  html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-`
 export default function Layout({ children }) {
   return (
     <React.Fragment>

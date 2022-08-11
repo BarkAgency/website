@@ -13,7 +13,6 @@ import talent from '../data/talent';
 const pageStyles = {
   color: "#232129",
   backgroundColor: "#000000",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 const headingStyles = {
   marginTop: 0,
@@ -160,10 +159,10 @@ const badgeStyle = {
 // markup
 const IndexPage = () => {
 
-    window.addEventListener(`scroll`, () => {
+    // window.addEventListener(`scroll`, () => {
 
-      console.log('scroll')
-    });
+    //   console.log('scroll')
+    // });
 
   return (
     <Layout>
