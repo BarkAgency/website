@@ -19,7 +19,8 @@ const talent = [
       text: "BRIANFROMDENMARK",
       url: "/brianfromdenmark/",
       image: "/talent/brian.jpg",
-      name: 'Brian Ikast Sørensen'
+      name: 'Brian Ikast Sørensen',
+      stream: 'https://www.twitch.tv/brianfromdenmark'
     },
     {
       text: "Zrool",
