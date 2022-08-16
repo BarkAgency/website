@@ -25,7 +25,10 @@ const ModalExamplePage = () => (
         title: talent[TALENT_INDEX].text,
         name: talent[TALENT_INDEX].name,
         image: talent[TALENT_INDEX].image,
-        stream: talent[TALENT_INDEX].stream
+        stream: talent[TALENT_INDEX].stream,
+        instagram: talent[TALENT_INDEX].instagram,
+        youtube: talent[TALENT_INDEX].youtube,
+        presskit: talent[TALENT_INDEX].presskit,
       }}
       />
   </Layout>
