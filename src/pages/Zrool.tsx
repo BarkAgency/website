@@ -9,19 +9,20 @@ import { Helmet } from 'react-helmet';
 
 import talent from '../data/talent';
 
-import closeX from '../images/x.svg';
-
 import TalentPage from '../components/talentPage';
-
-const profilePictureStyles = {
-  maxWidth: '100%'
-}
 
 const TALENT_INDEX = 4;
 
 const ModalExamplePage = () => (
   <Layout>
-    <TalentPage title={talent[TALENT_INDEX].text} name={talent[TALENT_INDEX].name} />
+    <TalentPage
+      {... {
+        title: talent[TALENT_INDEX].text,
+        name: talent[TALENT_INDEX].name,
+        image: talent[TALENT_INDEX].image,
+        stream: talent[TALENT_INDEX].stream
+      }}
+      />
   </Layout>
 )
 

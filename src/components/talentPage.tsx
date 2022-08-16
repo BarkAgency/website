@@ -4,16 +4,43 @@ import { Link } from 'gatsby';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Helmet } from 'react-helmet';
 
-type TalentPageProps {
+import closeX from '../images/x.svg';
+
+const profilePictureStyles = {
+  maxWidth: '100%'
+}
+
+const cornerLinkStyles = {
+  color: 'rgba(0, 0, 0, 0.2)',
+  textTransform: 'uppercase',
+  textDecoration: 'none'
+}
+
+const talentLinksStyles = {
+  color: '#000000',
+  display: 'block',
+  textTransform: 'uppercase',
+  textDecoration: 'none'
+}
+
+type TalentPageProps = {
     title: string;
     name: string;
+    image: string;
     stream?: string;
     instagram?: string;
     youtube?: string;
+    presskit?: string;
 }
 
 const TalentPage = ({
-    title
+    title,
+    name,
+    image,
+    stream,
+    instagram,
+    youtube,
+    presskit
 }: TalentPageProps) => (
 
     <ModalRoutingContext.Consumer>
@@ -52,7 +79,6 @@ const TalentPage = ({
           
               <Link to={closeTo || '/'} style={{
                 width: '15px',
-                padding: 30,
                 float: 'right'
               }}>
                 <img style={{ width: '10px' }} src={closeX} alt="Close" />
@@ -71,7 +97,7 @@ const TalentPage = ({
             justifyContent: 'center',
           }}>
         
-            <img style={profilePictureStyles} src={talent[TALENT_INDEX].image} alt={talent[TALENT_INDEX].text}/>
+            <img style={profilePictureStyles} src={image} alt={title}/>
             
             <div>
               <p>
@@ -80,43 +106,43 @@ const TalentPage = ({
             </div>
 
             <div>
-              {talent[TALENT_INDEX].stream &&
+              {stream &&
                 <Link style={ {
                     color: '#000000',
                     display: 'block',
                     textTransform: 'uppercase',
                     textDecoration: 'none'
-                  } } to={talent[TALENT_INDEX].stream}>
+                  } } to={stream}>
                   STREAM
                 </Link>
               }
-              {talent[TALENT_INDEX].instagram &&
+              {instagram &&
                 <Link style={ {
                     color: '#000000',
                     display: 'block',
                     textTransform: 'uppercase',
                     textDecoration: 'none'
-                  } } to={talent[TALENT_INDEX].instagram}>
+                  } } to={instagram}>
                   INSTAGRAM
                 </Link>
               }
-              {talent[TALENT_INDEX].youtube &&
+              {youtube &&
                 <Link style={ {
                     color: '#000000',
                     display: 'block',
                     textTransform: 'uppercase',
                     textDecoration: 'none'
-                  } } to={talent[TALENT_INDEX].youtube}>
+                  } } to={youtube}>
                   YOUTUBE
                 </Link>
               }
-               {talent[TALENT_INDEX].presskit &&
+               {presskit &&
                 <Link style={ {
                   color: '#000000',
                   display: 'block',
                   textTransform: 'uppercase',
                   textDecoration: 'none'
-                } } to={talent[TALENT_INDEX].presskit}>
+                } } to={presskit}>
                 PRESS KIT
               </Link>
               }
@@ -142,11 +168,7 @@ const TalentPage = ({
             
               <div>BARK AGENCY © 2022    ALL RIGHTS RESERVED    LEGAL NOTICE</div>
 
-              <AnchorLink gatsbyLinkProps={{ style: {
-                  color: 'rgba(0, 0, 0, 0.2)',
-                  textTransform: 'uppercase',
-                  textDecoration: 'none'
-                } }} to={`/#talent`} title={"talent"} />
+              <AnchorLink gatsbyLinkProps={{ style: cornerLinkStyles }} to={`/#talent`} title={"talent"} />
 
             </section>
         </div>
