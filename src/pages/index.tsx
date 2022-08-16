@@ -264,13 +264,13 @@ const IndexPage = () => {
             <div>
               <p>Bark Agency<br />
                 <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="mailto:hello@barkagency.dk">hello@barkagency.dk</a><br />
-                <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="tel:+4523443936">+45 23 44 39 36 </a>
+                <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="tel:+4523443936">+45 23443936</a>
               </p>
               <br />
               <p>
                 CVR 43380273<br />
                 Vilhelmsro 670<br />
-                3480 Fredensborg, Danmark<br />
+                Fredensborg, Danmark.<br />
               </p>
             </div>
           </section>
