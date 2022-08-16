@@ -15,6 +15,7 @@ const talent = [
       image: "/talent/agge.jpg",
       name: 'Agge Kaadt Trandum',
       stream: 'https://www.twitch.tv/agge',
+      instagram: 'https://www.instagram.com/HakkeAgge/',
       youtube: 'https://www.youtube.com/c/AggeHakke'
     },
     {
@@ -23,6 +24,7 @@ const talent = [
       image: "/talent/brian.jpg",
       name: 'Brian Ikast Sørensen',
       stream: 'https://www.twitch.tv/brianfromdenmark',
+      instagram: 'https://www.instagram.com/brianowitsz/',
       youtube: 'https://www.youtube.com/BrianFromDenmark'
     },
     {
@@ -31,6 +33,7 @@ const talent = [
       image: "/talent/zrool.jpg",
       name: 'Mikkel Uldahl Nielsen',
       stream: 'https://www.twitch.tv/Zrool',
+      instragram: 'https://www.instagram.com/therealzrool/',
       youtube: 'https://www.youtube.com/c/Zrool'
     },
     {
@@ -39,6 +42,7 @@ const talent = [
       image: "/talent/jk.jpg",
       name: 'Jakob Kristensen',
       stream: 'https://www.twitch.tv/JKFIFA',
+      instagram: 'https://www.instagram.com/jakob_kristensen97/',
       youtube: 'https://www.youtube.com/c/JKFIFA/'
     },
 ];
