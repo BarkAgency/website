@@ -1,17 +1,18 @@
 import React from 'react';
-import { ModalRoutingContext } from 'gatsby-plugin-modal-routing'
 import { Link } from 'gatsby';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Helmet } from 'react-helmet';
 
 import closeX from '../images/x.svg';
+import Copyright from './copyright';
 
 const profilePictureStyles = {
-  maxWidth: '100%'
+  maxWidth: '100%',
+  marginBottom: '1rem'
 }
 
 const cornerLinkStyles = {
-  color: 'rgba(0, 0, 0, 0.2)',
+  color: '#000',
   textTransform: 'uppercase',
   textDecoration: 'none'
 }
@@ -43,8 +44,7 @@ const TalentPage = ({
     presskit
 }: TalentPageProps) => (
 
-    <ModalRoutingContext.Consumer>
-      {({ modal, closeTo }) => (
+
         <div
           style={{
             height: '100%',
@@ -64,20 +64,19 @@ const TalentPage = ({
               background: '#fff',
               fontSize: '0.7rem',
               padding: 26,
-              color: 'rgba(0, 0, 0, 0.2)',
               display: 'flex',
               justifyContent: 'space-between',
             }}>
 
               <Link style={ {
-                  color: 'rgba(0, 0, 0, 0.2)',
+                  color: '#000',
                   textTransform: 'uppercase',
                   textDecoration: 'none'
                 } } to={`/produkt`}>
                 Cases
               </Link>
           
-              <Link to={closeTo || '/'} style={{
+              <Link to={'/#talent'} style={{
                 width: '15px',
                 float: 'right'
               }}>
@@ -159,21 +158,19 @@ const TalentPage = ({
             }}>
 
               <Link style={ {
-                  color: 'rgba(0, 0, 0, 0.2)',
+                  color: '#000',
                   textTransform: 'uppercase',
                   textDecoration: 'none'
                 } } to={`/produkt`}>
                 Produkt
               </Link>
             
-              <div>BARK AGENCY © 2022    ALL RIGHTS RESERVED    LEGAL NOTICE</div>
+              <Copyright />
 
               <AnchorLink gatsbyLinkProps={{ style: cornerLinkStyles }} to={`/#talent`} title={"talent"} />
 
             </section>
         </div>
-      )}
-    </ModalRoutingContext.Consumer>
 )
 
 export default TalentPage;

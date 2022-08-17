@@ -10,9 +10,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #000000;
     margin: 0px;
     font-family: "NeueHelvetica55Roman", sans-serif;
+    font-size: 11px;
   }
 
   html {

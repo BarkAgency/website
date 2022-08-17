@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
+import Copyright from "../components/copyright";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
  
 import talent from '../data/talent';
@@ -17,6 +18,7 @@ const pageStyles = {
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
+  fontSize: 53,
   lineHeight: 1
 }
 const headingAccentStyles = {
@@ -37,24 +39,24 @@ const listStyles = {
   paddingLeft: 0,
   display: 'flex',
   flexDirection: 'row',
-  //justifyContent: 'center',
+  marginTop: 0,
   alignItems: 'center',
   flexWrap: 'wrap'
 }
 const menuStyles = {
   paddingLeft: 0,
   display: 'flex',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  marginTop: 0
 }
 const listItemStyles = {
   fontWeight: 300,
   fontSize: 24,
-  //maxWidth: 560,
-  minWidth: 200,
-  maxWidth: '20%',
+  width: 196,
+  //maxWidth: '20%',
   marginBottom: 30,
   listStyleType: "none",
-  flex: '50%',
+  //flex: '0 0 50%',
   display: `inline-block`,
   padding: '.5rem',
 }
@@ -62,12 +64,12 @@ const listItemLinkStyles = {
   color: 'rgba(255, 255, 255, 0.85)' ,
   textDecoration: 'none',
   textTransform: 'uppercase',
-  fontSize: '0.8rem'
+  fontSize: '10px'
 }
 
 const linkStyle = {
   color: "rgba(0, 0, 0, 0.85)",
-  fontWeight: "bold",
+  fontWeight: "normal",
   fontSize: 16,
   textTransform: 'uppercase',
   verticalAlign: "5%",
@@ -108,13 +110,13 @@ const descriptionStyle = {
 }
 
 const logoStyles = {
-  width: "35%",
+  width: "600px",
+  maxWidth: "60%",
   margin: 'auto',
   display: 'block'
 }
 
 const viewZoneStyles = {
-  width: "100vw",
   minHeight: "100vh",
   //padding: 40,
   margin: 'auto',
@@ -222,7 +224,7 @@ const IndexPage = () => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-            <ul style={listStyles}>
+            <ul style={{...listStyles}}>
               {talent.map(talent => (
                 <li key={talent.url} style={{ ...listItemStyles }}>
                   <span>
@@ -266,7 +268,6 @@ const IndexPage = () => {
                 <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="mailto:hello@barkagency.dk">hello@barkagency.dk</a><br />
                 <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="tel:+4523443936">+45 23443936</a>
               </p>
-              <br />
               <p>
                 CVR 43380273<br />
                 Vilhelmsro 670<br />
@@ -274,36 +275,33 @@ const IndexPage = () => {
               </p>
             </div>
           </section>
+          <section style={{
+            textAlign: 'center',  
+            background: '#fff',
+            fontSize: '0.7rem',
+            padding: 26,
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}>
+
+            <Link style={ {
+                color: '#000',
+                textTransform: 'uppercase',
+                textDecoration: 'none'
+              } } to={`/produkt`}>
+              Produkt
+            </Link>
+          
+            <Copyright />
+
+            <AnchorLink gatsbyLinkProps={{ style: {
+                color: '#000',
+                textTransform: 'uppercase',
+                textDecoration: 'none'
+              } }} to={`#talent`} title={"talent"} />
+
+          </section>
         </section>
-
-        <section style={{
-          textAlign: 'center',  
-          background: '#fff',
-          fontSize: '0.7rem',
-          padding: 26,
-          color: 'rgba(0, 0, 0, 0.2)',
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}>
-
-          <Link style={ {
-              color: 'rgba(0, 0, 0, 0.2)',
-              textTransform: 'uppercase',
-              textDecoration: 'none'
-            } } to={`/produkt`}>
-            Produkt
-          </Link>
-        
-          <div>BARK AGENCY © 2022    ALL RIGHTS RESERVED    LEGAL NOTICE</div>
-
-          <AnchorLink gatsbyLinkProps={{ style: {
-              color: 'rgba(0, 0, 0, 0.2)',
-              textTransform: 'uppercase',
-              textDecoration: 'none'
-            } }} to={`#talent`} title={"talent"} />
-
-        </section>
-
       </main>
     </Layout>
   )
