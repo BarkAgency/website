@@ -19,7 +19,8 @@ const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
   fontSize: 53,
-  lineHeight: 1
+  lineHeight: 1,
+  fontWeight: 400
 }
 const headingAccentStyles = {
   color: "#663399",
@@ -35,11 +36,10 @@ const codeStyles = {
   borderRadius: 4,
 }
 const listStyles = {
-  marginBottom: 96,
   paddingLeft: 0,
   display: 'flex',
   flexDirection: 'row',
-  marginTop: 0,
+  margin: 0,
   alignItems: 'center',
   flexWrap: 'wrap'
 }
@@ -50,15 +50,11 @@ const menuStyles = {
   marginTop: 0
 }
 const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  width: 196,
-  //maxWidth: '20%',
+  width: 199,
   marginBottom: 30,
   listStyleType: "none",
-  //flex: '0 0 50%',
   display: `inline-block`,
-  padding: '.5rem',
+  margin: '.5rem',
 }
 const listItemLinkStyles = {
   color: 'rgba(255, 255, 255, 0.85)' ,
@@ -94,7 +90,7 @@ const menuLinkStyle = {
 }
 const menuLinkAStyle = {
   color: "rgba(0, 0, 0, 0.85)",
-  fontSize: '0.8rem',
+  fontSize: '11px',
   fontWeight: "normal",
   textTransform: 'uppercase',
   verticalAlign: "5%",
@@ -121,7 +117,6 @@ const viewZoneStyles = {
   //padding: 40,
   margin: 'auto',
   display: 'block',
-  fontSize: '3.5rem'
 }
 
 const docLinks = [
@@ -187,13 +182,11 @@ const IndexPage = () => {
         <section style={{ ...viewZoneStyles, background: '#ffffff' }}>
           <section style={{
               margin: 'auto',
-              padding: '1em',
+              padding: 26,
               textAlign: 'left',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              fontSize: '1.5rem',
-              //height: '100%',
               height: '100vh',
             }}>
 
@@ -207,8 +200,11 @@ const IndexPage = () => {
             </ul>
 
             <h2 style={headingStyles}>
-              Bark Agency giver dig en plads ved spisebordet hos præcist den målgruppe du gerne vil ramme.
-              Ved at have influencere der fastholder deres publikum i gennemsnit 45 minutter ad gangen, med muligheden for konstant eksponering og dialog om netop dit budskab eller dit produkt, sikrer vi jer muligheden for succes. 
+              <p>Bark Agency leverer live interactive marketing. Vi kommercialiserer danske live streamere, og får dit brand og budskab igennem til en unik målgruppe med stor effekt. Vores streamere har samlet:</p>
+
+              <p style={{ marginBottom: 0 }}>613,505 timers watch time, <br />
+              1,164 average viewers, <br />
+              ... og i alt 1,890,475 views.</p>
             </h2>
           </section>
     
@@ -252,6 +248,15 @@ const IndexPage = () => {
         </section>
 
         <section id="kontakt" style={{ ...viewZoneStyles, background: '#ffffff' }}>
+          <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              flexDirection: 'column',
+
+              height: '100vh',
+            }}>
+
+   
           <section style={{
             width: '70%',
             margin: 'auto',
@@ -260,47 +265,55 @@ const IndexPage = () => {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            fontSize: '1.5rem',
-            height: '100vh',
+            fontSize: '23px',
           }}>
-            <div>
-              <p>Bark Agency<br />
-                <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="mailto:hello@barkagency.dk">hello@barkagency.dk</a><br />
-                <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="tel:+4523443936">+45 23443936</a>
-              </p>
-              <p>
-                CVR 43380273<br />
-                Vilhelmsro 670<br />
-                Fredensborg, Danmark.<br />
-              </p>
-            </div>
+              <div>
+                <p>Bark Agency<br />
+                  <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="mailto:hello@barkagency.dk">hello@barkagency.dk</a><br />
+                  <a style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.85)' }} href="tel:+4523443936">+45 23443936</a>
+                </p>
+                <p>
+                  CVR 43380273<br />
+                  Vilhelmsro 670<br />
+                  Fredensborg, Danmark<br />
+                </p>
+              </div>
+           
+
+                 
+
+
+
           </section>
+
           <section style={{
-            textAlign: 'center',  
-            background: '#fff',
-            fontSize: '0.7rem',
-            padding: 26,
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}>
+                    textAlign: 'center',  
+                    background: '#fff',
+                    fontSize: '0.7rem',
+                    padding: 26,
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                  }}>
 
-            <Link style={ {
-                color: '#000',
-                textTransform: 'uppercase',
-                textDecoration: 'none'
-              } } to={`/produkt`}>
-              Produkt
-            </Link>
-          
-            <Copyright />
+                    <Link style={ {
+                        color: '#000',
+                        textTransform: 'uppercase',
+                        textDecoration: 'none'
+                      } } to={`/produkt`}>
+                      Produkt
+                    </Link>
+                  
+                    <Copyright />
 
-            <AnchorLink gatsbyLinkProps={{ style: {
-                color: '#000',
-                textTransform: 'uppercase',
-                textDecoration: 'none'
-              } }} to={`#talent`} title={"talent"} />
+                    <AnchorLink gatsbyLinkProps={{ style: {
+                        color: '#000',
+                        textTransform: 'uppercase',
+                        textDecoration: 'none'
+                      } }} to={`#talent`} title={"talent"} />
 
-          </section>
+                  </section>
+                  </div>
+     
         </section>
       </main>
     </Layout>
