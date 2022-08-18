@@ -45,6 +45,15 @@ const talent = [
       instagram: 'https://www.instagram.com/jakob_kristensen97/',
       youtube: 'https://www.youtube.com/c/JKFIFA/'
     },
+    {
+      text: "ELLAH",
+      url: "/ELLAH/",
+      image: "/talent/placeholder.jpg",
+      name: 'ELLEVILDE ELLAH',
+      stream: 'https://www.twitch.tv/ellahdk',
+      instagram: 'https://www.instagram.com/ellahgram',
+      youtube: 'https://www.youtube.com/c/ellahdk/'
+    },
 ];
 
 export default talent;
