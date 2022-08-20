@@ -200,11 +200,7 @@ const IndexPage = () => {
             </ul>
 
             <h2 style={headingStyles}>
-              <p>Bark Agency leverer live interactive marketing. Vi kommercialiserer danske live streamere, og får dit brand og budskab igennem til en unik målgruppe med stor effekt. Vores streamere har samlet:</p>
-
-              <p style={{ marginBottom: 0 }}>613,505 timers watch time, <br />
-              1,164 average viewers, <br />
-              ... og i alt 1,890,475 views.</p>
+              <p>Bark Agency leverer live interactive marketing. Vi kommercialiserer danske live streamere, og får dit brand og budskab igennem til en unik målgruppe med stor effekt.</p>
             </h2>
           </section>
     
