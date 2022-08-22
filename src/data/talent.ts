@@ -13,7 +13,7 @@ const talent = [
       text: "agge",
       url: "/agge/",
       image: "/talent/agge.jpg",
-      name: 'Agge Kaadt Trandum',
+      name: 'Agge',
       stream: 'https://www.twitch.tv/agge',
       instagram: 'https://www.instagram.com/HakkeAgge/',
       youtube: 'https://www.youtube.com/c/AggeHakke'
