@@ -11,7 +11,7 @@ import talent from '../data/talent';
 
 import TalentPage from '../components/talentPage';
 
-const TALENT_INDEX = 4;
+const TALENT_INDEX = 3;
 
 const ModalExamplePage = () => (
   <Layout>
