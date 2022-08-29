@@ -48,7 +48,7 @@ const talent = [
     {
       text: "ELLAH",
       url: "/ELLAH/",
-      image: "/talent/placeholder.jpg",
+      image: "/talent/ellahdk.jpg",
       name: 'ELLEVILDE ELLAH',
       stream: 'https://www.twitch.tv/ellahdk',
       instagram: 'https://www.instagram.com/ellahgram',
