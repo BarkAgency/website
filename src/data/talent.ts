@@ -49,7 +49,7 @@ const talent = [
       text: "ELLAH",
       url: "/ELLAH/",
       image: "/talent/ellahdk.jpg",
-      name: 'ELLEVILDE ELLAH',
+      name: 'Benjamin Juhl Kristensen',
       stream: 'https://www.twitch.tv/ellahdk',
       instagram: 'https://www.instagram.com/ellahgram',
       youtube: 'https://www.youtube.com/c/ellahdk/'
