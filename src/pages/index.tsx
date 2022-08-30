@@ -163,7 +163,7 @@ const GalleryUl = styled.ul`
 const GalleryZoom = styled.div`
 	max-width: 100%;
 	min-width: 170px;
-	max-height: 400px;
+	height: 298px;
 	overflow: hidden;
 	& img {
 		transition: all 0.4s ease-in-out;
