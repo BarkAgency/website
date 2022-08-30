@@ -113,56 +113,56 @@ const TalentPage = ({
 
 			<div>
 				{stream && (
-					<Link
+					<a
+						href={stream}
 						style={{
 							color: '#000000',
 							display: 'block',
 							textTransform: 'uppercase',
 							textDecoration: 'none',
 						}}
-						to={stream}
 					>
 						STREAM
-					</Link>
+					</a>
 				)}
 				{instagram && (
-					<Link
+					<a
 						style={{
 							color: '#000000',
 							display: 'block',
 							textTransform: 'uppercase',
 							textDecoration: 'none',
 						}}
-						to={instagram}
+						href={instagram}
 					>
 						INSTAGRAM
-					</Link>
+					</a>
 				)}
 				{youtube && (
-					<Link
+					<a
 						style={{
 							color: '#000000',
 							display: 'block',
 							textTransform: 'uppercase',
 							textDecoration: 'none',
 						}}
-						to={youtube}
+						href={youtube}
 					>
 						YOUTUBE
-					</Link>
+					</a>
 				)}
 				{presskit && (
-					<Link
+					<a
 						style={{
 							color: '#000000',
 							display: 'block',
 							textTransform: 'uppercase',
 							textDecoration: 'none',
 						}}
-						to={presskit}
+						href={presskit}
 					>
 						PRESS KIT
-					</Link>
+					</a>
 				)}
 			</div>
 		</div>
