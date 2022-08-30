@@ -1,15 +1,7 @@
-// pages/modal-example.js
-
 import React from 'react';
-import { Link } from 'gatsby';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import Layout from '../components/layoutModal';
-import { ModalRoutingContext } from 'gatsby-plugin-modal-routing';
-import { Helmet } from 'react-helmet';
-
-import talent from '../data/talent';
-
 import TalentPage from '../components/talentPage';
+import talent from '../data/talent';
 
 const TALENT_INDEX = 3;
 
