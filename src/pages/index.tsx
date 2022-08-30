@@ -4,7 +4,7 @@ import logo from '../images/bark.svg';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
 import { Link } from 'gatsby';
-
+import styled from 'styled-components';
 import PanelSnap from 'panelsnap';
 import { Helmet } from 'react-helmet';
 
@@ -79,10 +79,6 @@ const linkImgStyle = {
 	maxWidth: '100%',
 	minWidth: 170,
 	maxHeight: '400px',
-	transition: 'all .2s ease-in-out',
-	'&:hover': {
-		transform: 'scale(1.1)',
-	},
 };
 
 const menuLinkStyle = {
@@ -155,6 +151,27 @@ const badgeStyle = {
 	marginLeft: 10,
 	lineHeight: 1,
 };
+
+const GalleryUl = styled.ul`
+	padding-left: 0px;
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0px;
+	align-items: center;
+`;
+
+const GalleryZoom = styled.div`
+	max-width: 100%;
+	min-width: 170px;
+	max-height: 400px;
+	overflow: hidden;
+	& img {
+		transition: all 0.4s ease-in-out;
+	}
+	&:hover img {
+		transform: scale(1.1);
+	}
+`;
 
 // markup
 const IndexPage = () => {
@@ -241,7 +258,7 @@ const IndexPage = () => {
 							alignItems: 'center',
 						}}
 					>
-						<ul style={{ ...listStyles }}>
+						<GalleryUl>
 							{talent.map((talent) => (
 								<li key={talent.url} style={{ ...listItemStyles }}>
 									<span>
@@ -252,17 +269,20 @@ const IndexPage = () => {
 											}}
 											to={`${talent.url}`}
 										>
-											<img
-												style={linkImgStyle}
-												src={talent.image}
-												alt={talent.text}
-											/>
+											<GalleryZoom>
+												<img
+													style={linkImgStyle}
+													src={talent.image}
+													alt={talent.text}
+												/>
+											</GalleryZoom>
+
 											<p>{talent.text}</p>
 										</Link>
 									</span>
 								</li>
 							))}
-						</ul>
+						</GalleryUl>
 					</section>
 				</section>
 
