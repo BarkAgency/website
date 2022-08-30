@@ -3,10 +3,11 @@
 barkagency.dk
 
 ```shell
-   # Install deps
-   npm i
+# Install deps
+npm i
 ```
 
 ```shell
-    npm run develop
+# Run local develop that auto updates with changes
+npm run develop
 ```
