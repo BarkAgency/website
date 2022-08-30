@@ -105,7 +105,9 @@ const IndexPage = () => {
 				panelSelector: 'section[id]',
 			}) as any;
 
-			// panelsnap.on('activatePanel', (p: any) => { console.log(p)});
+			panelsnap.on('activatePanel', (element: any) => {
+				history.replaceState(null, '', '#' + element.id);
+			});
 
 			return () => {
 				panelsnap.destroy();
@@ -121,7 +123,7 @@ const IndexPage = () => {
 				</Helmet>
 
 				<section
-					id="logo"
+					id="start"
 					style={{
 						...viewZoneStyles,
 						display: 'flex',
