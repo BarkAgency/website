@@ -4,19 +4,18 @@ import { Link } from 'gatsby';
 
 import talent from '../data/talent';
 
-const listItemLinkStyles = {
-	color: 'rgba(255, 255, 255, 0.85)',
-	textDecoration: 'none',
-	textTransform: 'uppercase',
-	fontSize: '10px',
-};
-
 const GalleryUl = styled.ul`
 	padding-left: 0px;
 	display: flex;
 	flex-flow: row wrap;
 	margin: 0px;
 	align-items: center;
+	@media screen and (max-width: 1350px) {
+		width: 645px;
+	}
+	@media screen and (max-width: 700px) {
+		width: 430px;
+	}
 `;
 
 const GalleryLi = styled.li`
@@ -38,10 +37,10 @@ const GalleryZoom = styled.div`
 	height: 298px;
 	overflow: hidden;
 	& img {
-		transition: all 0.4s ease-in-out;
+		transition: all 0.3s ease-in-out;
 	}
 	&:hover img {
-		transform: scale(1.1);
+		transform: scale(1.07);
 	}
 `;
 
@@ -55,7 +54,7 @@ const StyledLink = styled(Link)`
 const Gallery = ({}) => (
 	<section
 		style={{
-			width: '70%',
+			padding: 26,
 			height: '100%',
 			margin: 'auto',
 			display: 'flex',
