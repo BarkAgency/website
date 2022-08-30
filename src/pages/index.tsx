@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout';
 import { Link } from 'gatsby';
 
-import PanelSnap from 'panelsnap'
+import PanelSnap from 'panelsnap';
 import { Helmet } from 'react-helmet';
 
 import Copyright from '../components/copyright';
@@ -24,7 +24,7 @@ const headingStyles = {
 	fontSize: 45,
 	lineHeight: 1,
 	fontWeight: 400,
-  textAlign: 'center'
+	textAlign: 'center',
 };
 const headingAccentStyles = {
 	color: '#663399',
@@ -159,82 +159,19 @@ const badgeStyle = {
 // markup
 const IndexPage = () => {
 	useEffect(() => {
+		var panelsnap: any;
 
+		if (typeof window !== 'undefined' && !panelsnap) {
+			panelsnap = new PanelSnap({
+				panelSelector: 'section[id]',
+			}) as any;
 
-    if (typeof window !== 'undefined') {
-      new PanelSnap({
-        panelSelector: 'section[id]'
-      });
-    }
+			// panelsnap.on('activatePanel', (p: any) => { console.log(p)});
 
-
-
-		// var lastScrollTop = 0;
-		// const sections = Array.from(document.querySelectorAll('section[id]'));
-
-		// const handleScroll = (event) => {
-		// 	var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-
-		// 	//Find next
-		// 	const prevSectionElement = sections.find((sec) => {
-		// 		const elePos = sec.getBoundingClientRect().y + window.scrollY;
-		// 		console.log(sec.id, sec.getBoundingClientRect().y + window.scrollY);
-
-		// 		return window.scrollY > elePos;
-		// 	});
-		// 	const nextSectionElement = sections.find((sec) => {
-		// 		const elePos = sec.getBoundingClientRect().y + window.scrollY;
-		// 		console.log(sec.id, sec.getBoundingClientRect().y + window.scrollY);
-
-		// 		return window.scrollY < elePos;
-		// 	});
-
-		// 	if (!nextSectionElement) return;
-		// 	const nextPos =
-		// 		nextSectionElement.getBoundingClientRect().y + window.scrollY;
-
-		// 	if (st > lastScrollTop) {
-		// 		// downscroll code
-		// 		console.log(
-		// 			'scrolling down',
-		// 			st,
-		// 			prevSectionElement,
-		// 			nextSectionElement
-		// 		);
-
-		// 		if (st - lastScrollTop > 200) {
-		// 			nextSectionElement.scrollIntoView({
-		// 				behavior: 'smooth',
-		// 			});
-		// 		}
-		// 	} else {
-		// 		// upscroll code
-		// 		console.log('scrolling up');
-		// 	}
-		// 	lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-
-		// 	console.log('we are at', st);
-		// 	console.log('next is at', nextPos);
-
-		// 	// hvis sidste element er mere end 20 pc væk scroll til næste.
-		// 	//if (st )
-
-		// 	// allan && allan.scrollIntoView({
-		// 	//     behavior: 'smooth'
-		// 	// });
-
-		// 	console.log('window.scrollY', window.scrollY, nextSectionElement);
-		// };
-
-		// //   document.querySelector('#kontakt').scrollIntoView({
-		// //     behavior: 'smooth'
-		// // });
-
-		// window.addEventListener('scroll', handleScroll);
-
-		// return () => {
-		// 	window.removeEventListener('scroll', handleScroll);
-		// };
+			return () => {
+				panelsnap.destroy();
+			};
+		}
 	}, []);
 
 	return (
@@ -244,7 +181,8 @@ const IndexPage = () => {
 					<title>Bark Agency</title>
 				</Helmet>
 
-				<section id='logo'
+				<section
+					id="logo"
 					style={{
 						...viewZoneStyles,
 						display: 'flex',
@@ -287,7 +225,7 @@ const IndexPage = () => {
 								budskab igennem til en unik målgruppe med stor effekt.
 							</p>
 						</h2>
-            <div></div>
+						<div></div>
 					</section>
 				</section>
 
@@ -321,11 +259,6 @@ const IndexPage = () => {
 											/>
 											<p>{talent.text}</p>
 										</Link>
-										{talent.badge && (
-											<span style={badgeStyle} aria-label="New Badge">
-												NY!
-											</span>
-										)}
 									</span>
 								</li>
 							))}
