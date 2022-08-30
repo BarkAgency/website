@@ -17,6 +17,12 @@ const pageStyles = {
 	color: '#232129',
 	backgroundColor: '#000000',
 };
+
+const Main = styled.main`
+	background-color: #000000;
+	color: #232129;
+`;
+
 const headingStyles = {
 	marginTop: 0,
 	marginBottom: 64,
@@ -109,7 +115,7 @@ const IndexPage = () => {
 
 	return (
 		<Layout>
-			<main style={pageStyles}>
+			<Main>
 				<Helmet>
 					<title>Bark Agency</title>
 				</Helmet>
@@ -262,7 +268,7 @@ const IndexPage = () => {
 						</section>
 					</div>
 				</section>
-			</main>
+			</Main>
 		</Layout>
 	);
 };
