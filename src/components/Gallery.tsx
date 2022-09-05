@@ -40,8 +40,18 @@ const GalleryZoom = styled.div`
 		transition: all 0.3s ease-in-out;
 	}
 	&:hover img {
-		transform: scale(1.07);
+		transform: scale(1.04);
 	}
+`;
+
+const GalleryDiv = styled.div`
+	padding: 26px;
+	height: 100%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 `;
 
 const StyledLink = styled(Link)`
@@ -52,17 +62,7 @@ const StyledLink = styled(Link)`
 `;
 
 const Gallery = ({}) => (
-	<section
-		style={{
-			padding: 26,
-			height: '100%',
-			margin: 'auto',
-			display: 'flex',
-			flexDirection: 'column',
-			justifyContent: 'center',
-			alignItems: 'center',
-		}}
-	>
+	<GalleryDiv>
 		<GalleryUl>
 			{talent.map((talent) => (
 				<GalleryLi key={talent.url}>
@@ -81,7 +81,7 @@ const Gallery = ({}) => (
 				</GalleryLi>
 			))}
 		</GalleryUl>
-	</section>
+	</GalleryDiv>
 );
 
 export default Gallery;
