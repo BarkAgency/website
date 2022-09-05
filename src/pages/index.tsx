@@ -12,20 +12,23 @@ import Copyright from '../components/copyright';
 import Gallery from '../components/Gallery';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
-// styles
-const pageStyles = {
-	color: '#232129',
-	backgroundColor: '#000000',
-};
-
 const Main = styled.main`
 	background-color: #000000;
 	color: #232129;
 `;
 
+const IntroText = styled.h2`
+	margin: auto;
+	max-width: 1290px;
+	font-size: 45px;
+	line-height: 1;
+	font-weight: 400;
+	text-align: center;
+`;
+
 const headingStyles = {
-	marginTop: 0,
-	marginBottom: 64,
+	margin: 'auto',
+	maxWidth: 1290,
 	fontSize: 45,
 	lineHeight: 1,
 	fontWeight: 400,
@@ -81,21 +84,17 @@ const docLinks = [
 	{
 		text: 'Talent',
 		url: 'talent',
-		color: '#8954A8',
 	},
 	{
 		text: 'Cases',
 		url: 'cases',
-		color: '#8954A8',
 	},
 	{
 		text: 'Kontakt',
 		url: 'kontakt',
-		color: '#8954A8',
 	},
 ];
 
-// markup
 const IndexPage = () => {
 	useEffect(() => {
 		var panelsnap: any;
@@ -159,14 +158,13 @@ const IndexPage = () => {
 							))}
 						</ul>
 
-						<h2 style={headingStyles}>
+						<IntroText>
 							<p>
 								Bark Agency leverer live interactive marketing. Vi
 								kommercialiserer danske live streamere, og får dit brand og
 								budskab igennem til en unik målgruppe med stor effekt.
 							</p>
-						</h2>
-						<div></div>
+						</IntroText>
 					</section>
 				</section>
 
