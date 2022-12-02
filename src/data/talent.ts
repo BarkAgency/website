@@ -55,6 +55,14 @@ const talent = [
 		instagram: 'https://www.instagram.com/ellahgram',
 		youtube: 'https://www.youtube.com/c/ellahdk/',
 	},
+	{
+		text: 'CHAD LEGND',
+		url: '/ChadLegnd/',
+		image: '/talent/CHADLEGND.jpg',
+		name: 'Benjamin Juhl',
+		stream: ' https://www.twitch.tv/chadlegnd',
+		twitter: 'https://twitter.com/CLegnd',
+	},
 ];
 
 export default talent;

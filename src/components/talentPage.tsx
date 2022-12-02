@@ -32,6 +32,7 @@ type TalentPageProps = {
 	instagram?: string;
 	youtube?: string;
 	presskit?: string;
+	twitter?: string;
 };
 
 const TalentPage = ({
@@ -42,6 +43,7 @@ const TalentPage = ({
 	instagram,
 	youtube,
 	presskit,
+	twitter,
 }: TalentPageProps) => (
 	<div
 		style={{
@@ -149,6 +151,19 @@ const TalentPage = ({
 						href={youtube}
 					>
 						YOUTUBE
+					</a>
+				)}
+				{twitter && (
+					<a
+						style={{
+							color: '#000000',
+							display: 'block',
+							textTransform: 'uppercase',
+							textDecoration: 'none',
+						}}
+						href={twitter}
+					>
+						TWITTER
 					</a>
 				)}
 				{presskit && (
