@@ -59,7 +59,7 @@ const talent = [
 		text: 'CHAD LEGND',
 		url: '/ChadLegnd/',
 		image: '/talent/CHADLEGND.jpg',
-		name: 'Benjamin Juhl',
+		name: 'Mads Speitzer',
 		stream: ' https://www.twitch.tv/chadlegnd',
 		twitter: 'https://twitter.com/CLegnd',
 	},
