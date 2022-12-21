@@ -1,6 +1,6 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
 import talent from '../data/talent';
 
@@ -10,7 +10,7 @@ const GalleryUl = styled.ul`
 	flex-flow: row wrap;
 	margin: 0px;
 	align-items: center;
-	@media screen and (max-width: 1350px) {
+	@media screen and (max-width: 1360px) {
 		width: 645px;
 	}
 	@media screen and (max-width: 700px) {
@@ -39,8 +39,15 @@ const GalleryZoom = styled.div`
 	& img {
 		transition: all 0.3s ease-in-out;
 	}
+
+	& img + img {
+		display: none;
+	}
 	&:hover img {
-		transform: scale(1.04);
+		display: none;
+	}
+	&:hover img + img {
+		display: block;
 	}
 `;
 
@@ -74,6 +81,10 @@ const Gallery = ({}) => (
 					>
 						<GalleryZoom>
 							<GalleryImg src={talent.image} alt={talent.text} />
+							<GalleryImg
+								src={talent.image.replace('.jpg', '-2.jpg')}
+								alt={talent.text}
+							/>
 						</GalleryZoom>
 
 						<p>{talent.text}</p>
