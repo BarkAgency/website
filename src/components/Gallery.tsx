@@ -10,31 +10,36 @@ const GalleryUl = styled.ul`
 	flex-flow: row wrap;
 	margin: 0px;
 	align-items: center;
+	justify-content: center;
+	width: 100%;
 	@media screen and (max-width: 1360px) {
 		width: 645px;
 	}
 	@media screen and (max-width: 700px) {
 		width: 430px;
 	}
+	@media screen and (max-width: 699px) {
+		width: 100%;
+	}
 `;
 
 const GalleryLi = styled.li`
-	width: 199px;
+	max-width: 199px;
 	list-style-type: none;
 	display: inline-block;
 	margin: 0.5rem;
+	width: calc(50% - 1rem);
 `;
 
 const GalleryImg = styled.img`
 	max-width: 100%;
-	min-width: 170px;
+	//min-width: 170px;
 	max-height: 400px;
 `;
 
 const GalleryZoom = styled.div`
 	max-width: 100%;
-	min-width: 170px;
-	height: 298px;
+	//min-width: 170px;
 	overflow: hidden;
 	& img {
 		transition: all 0.3s ease-in-out;
