@@ -33,13 +33,11 @@ const GalleryLi = styled.li`
 
 const GalleryImg = styled.img`
 	max-width: 100%;
-	//min-width: 170px;
 	max-height: 400px;
 `;
 
 const GalleryZoom = styled.div`
 	max-width: 100%;
-	//min-width: 170px;
 	overflow: hidden;
 	& img {
 		transition: all 0.3s ease-in-out;
