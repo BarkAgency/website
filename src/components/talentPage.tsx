@@ -1,7 +1,8 @@
-import React from 'react';
 import { Link } from 'gatsby';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import React from 'react';
 import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
 
 import closeX from '../images/x.svg';
 import Copyright from './copyright';
@@ -23,6 +24,25 @@ const talentLinksStyles = {
 	textTransform: 'uppercase',
 	textDecoration: 'none',
 };
+
+const ProfilePicture = styled.div`
+	max-width: 100%;
+	height: 396px;
+	overflow: hidden;
+	& img {
+		transition: all 0.3s ease-in-out;
+	}
+
+	& img + img {
+		display: none;
+	}
+	&:hover img {
+		display: none;
+	}
+	&:hover img + img {
+		display: block;
+	}
+`;
 
 type TalentPageProps = {
 	title: string;
@@ -103,7 +123,14 @@ const TalentPage = ({
 				justifyContent: 'center',
 			}}
 		>
-			<img style={profilePictureStyles} src={image} alt={title} />
+			<ProfilePicture>
+				<img
+					style={profilePictureStyles}
+					src={image.replace('.jpg', '-2.jpg')}
+					alt={title}
+				/>
+				<img style={profilePictureStyles} src={image} alt={title} />
+			</ProfilePicture>
 
 			<div>
 				<p>
