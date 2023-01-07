@@ -42,16 +42,6 @@ const GalleryZoom = styled.div`
 	& img {
 		transition: all 0.3s ease-in-out;
 	}
-
-	& img + img {
-		display: none;
-	}
-	&:hover img {
-		display: none;
-	}
-	&:hover img + img {
-		display: block;
-	}
 `;
 
 const GalleryDiv = styled.div`
@@ -84,10 +74,6 @@ const Gallery = ({}) => (
 					>
 						<GalleryZoom>
 							<GalleryImg src={talent.image} alt={talent.text} />
-							<GalleryImg
-								src={talent.image.replace('.jpg', '-2.jpg')}
-								alt={talent.text}
-							/>
 						</GalleryZoom>
 
 						<p>{talent.text}</p>
