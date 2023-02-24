@@ -1,16 +1,15 @@
+import { Link } from 'gatsby';
+import PanelSnap from 'panelsnap';
 import * as React from 'react';
 import { useEffect } from 'react';
-import logo from '../images/bark.svg';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import Layout from '../components/layout';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
-import PanelSnap from 'panelsnap';
 import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
+import Layout from '../components/layout';
+import logo from '../images/bark.svg';
 
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import Copyright from '../components/copyright';
 import Gallery from '../components/Gallery';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Main = styled.main`
 	background-color: #000000;
@@ -160,9 +159,9 @@ const IndexPage = () => {
 
 						<IntroText>
 							<p>
-								Bark Agency leverer live interactive marketing. Vi
-								kommercialiserer danske live streamere, og får dit brand og
-								budskab igennem til en unik målgruppe med stor effekt.
+								Bark Agency leverer live interactive marketing.
+								<br /> Vi kommercialiserer danske live streamere, og får dit
+								brand og budskab igennem til en unik målgruppe med stor effekt.
 							</p>
 						</IntroText>
 					</section>
