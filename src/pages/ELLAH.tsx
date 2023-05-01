@@ -3,7 +3,7 @@ import Layout from '../components/layoutModal';
 import TalentPage from '../components/talentPage';
 import talent from '../data/talent';
 
-const TALENT_INDEX = 5;
+const TALENT_INDEX = 4;
 
 const ModalExamplePage = () => (
 	<Layout>
