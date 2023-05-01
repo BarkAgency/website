@@ -29,15 +29,6 @@ const talent = [
 		youtube: 'https://www.youtube.com/BrianFromDenmark',
 	},
 	{
-		text: 'Zrool',
-		url: '/Zrool/',
-		image: '/talent/zrool.jpg',
-		name: 'Mikkel Uldahl Nielsen',
-		stream: 'https://www.twitch.tv/Zrool',
-		instagram: 'https://www.instagram.com/therealzrool/',
-		youtube: 'https://www.youtube.com/c/Zrool',
-	},
-	{
 		text: 'JK',
 		url: '/JK/',
 		image: '/talent/jk.jpg',
