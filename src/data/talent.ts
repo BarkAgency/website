@@ -54,6 +54,15 @@ const talent = [
 		stream: ' https://www.twitch.tv/chadlegnd',
 		twitter: 'https://twitter.com/CLegnd',
 	},
+	{
+		text: 'CoachDP',
+		url: '/CoachDP/',
+		image: '/talent/CoachDP.jpg',
+		name: 'Niklas Dahl Poulsen',
+		stream: ' https://www.twitch.tv/coachdp/',
+		instagram: 'https://www.instagram.com/coachdpcs/',
+		twitter: 'https://twitter.com/CoachdpCS',
+	},
 ];
 
 export default talent;
